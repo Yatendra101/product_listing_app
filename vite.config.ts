@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "/src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   build: {
@@ -16,5 +16,5 @@ export default defineConfig({
     port: 3000, // Local dev only
     strictPort: true,
   },
-  base: "/", // Ensure correct asset paths
+  base: "./", // Ensure correct asset paths
 });
