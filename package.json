@@ -27,12 +27,11 @@
     "tailwindcss-animate": "^1.0.7",
     "tanstack": "^1.0.0",
     "typescript": "^5.8.2",
-    "vite": "^6.2.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build", 
+    "build": "vite build",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "start": "vite preview"
   },
@@ -53,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "vite": "^5.4.15"
   }
 }
