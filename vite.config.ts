@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   server: {
-    host: true,  // ✅ Allow Vercel to expose the app
-    port: 8080,  // You can change this if needed
+    host: true,
+    port: 8080,
   },
   plugins: [
     react(),
@@ -18,6 +18,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: "dist", // ✅ Ensure Vercel uses the correct output directory
+    outDir: "dist",
   },
+  base: "/",  // ✅ Ensure correct base URL for Vercel
 }));
