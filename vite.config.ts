@@ -4,10 +4,6 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  server: {
-    host: true,  // ✅ Allows external access (fixes stuck network issues)
-    port: 3000,  // ✅ Ensure a consistent port
-  },
   plugins: [
     react(),
     mode === "development" && componentTagger(),
@@ -20,5 +16,13 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
   },
-  base: "/", // ✅ Ensures assets load correctly on Vercel
+  base: "/", // ✅ Fix for Vercel
+
+  // ✅ Only enable `server` settings for development
+  ...(mode === "development" && {
+    server: {
+      host: true,
+      port: 3000,
+    },
+  }),
 }));
