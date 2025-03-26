@@ -20,5 +20,5 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
   },
-  base: "./", // ✅ Ensures assets load correctly on Vercel
+  base: "/", // ✅ Ensures assets load correctly on Vercel
 }));
