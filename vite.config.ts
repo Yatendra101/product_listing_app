@@ -16,13 +16,15 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
   },
-  base: "/", // ✅ Fix for Vercel
+  base: "/", // ✅ Ensure correct base path for Vercel
 
-  // ✅ Only enable `server` settings for development
-  ...(mode === "development" && {
-    server: {
-      host: true,
-      port: 3000,
-    },
-  }),
+  // ✅ Remove dev server settings in production
+  ...(mode === "development"
+    ? {
+        server: {
+          host: true,
+          port: 3000,
+        },
+      }
+    : {}),
 }));
