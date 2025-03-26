@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
   ...(mode === "development"
     ? {
         server: {
-          host: true,
+          host: false,
           port: 3000,
         },
       }
